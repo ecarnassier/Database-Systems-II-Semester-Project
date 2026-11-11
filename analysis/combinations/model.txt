@@ -1,0 +1,74 @@
+[System]
+-- specify system name
+Name: Product Search
+
+[Parameter]
+-- general syntax is parameter_name : value1, value2, ...
+Category (enum) : -, women-tshirts, men-jackets, women-trousers, women-skirts, men-sneakers
+TypeFilter (enum) : -, neckline, closure, rise, soleMaterial
+Size (enum) : -, letter, waist, shoeEU
+InStock (enum) : -, true, false
+Price (enum) : -, minOnly, maxOnly, range, equal
+Q (enum) : -, minLength, regular, maxLength
+Brand (enum) : -, one, several
+Color (enum) : -, one, several
+Sort (enum) : -, priceAsc, priceDesc, newest, popular
+PageSize (enum) : -, min, regular, max
+
+[Relation]
+-- this section is optional
+-- general format Rx : (p1, p2, ..., pk, Strength)
+
+[Constraint]
+-- this section is also optional
+TypeFilter = "neckline" => Category = "women-tshirts"
+TypeFilter = "closure" => Category = "men-jackets"
+TypeFilter = "rise" => (Category = "women-trousers" || Category = "women-skirts")
+TypeFilter = "soleMaterial" => Category = "men-sneakers"
+Size = "letter" => (Category = "women-tshirts" || Category = "men-jackets" || Category = "women-skirts")
+Size = "waist" => Category = "women-trousers"
+Size = "shoeEU" => Category = "men-sneakers"
+Category = "-" => Q != "-"
+
+[Test Set]
+-- set existing test set for extend mode. this is also optional
+-- * represents don't-care value
+Category,TypeFilter,Size,InStock,Price,Q,Brand,Color,Sort,PageSize
+-,-,-,true,minOnly,minLength,one,one,priceAsc,min
+women-tshirts,-,letter,false,maxOnly,regular,several,several,priceDesc,regular
+women-tshirts,neckline,-,-,range,maxLength,-,-,newest,max
+men-jackets,-,letter,-,equal,-,one,-,popular,-
+men-jackets,closure,-,false,-,regular,-,one,-,min
+women-trousers,-,waist,true,range,maxLength,several,several,-,regular
+women-trousers,rise,waist,false,equal,regular,one,-,priceAsc,max
+women-skirts,-,letter,true,-,minLength,several,one,newest,max
+women-skirts,rise,-,-,minOnly,-,-,several,popular,regular
+men-sneakers,-,shoeEU,-,maxOnly,minLength,-,-,-,-
+men-sneakers,soleMaterial,shoeEU,true,range,-,one,one,priceDesc,min
+women-tshirts,neckline,letter,false,-,maxLength,one,several,popular,min
+women-trousers,rise,waist,-,-,minLength,several,one,priceDesc,-
+men-sneakers,soleMaterial,shoeEU,false,-,maxLength,several,several,priceAsc,regular
+women-tshirts,neckline,letter,true,minOnly,-,several,-,-,max
+men-jackets,closure,letter,false,minOnly,maxLength,one,several,newest,-
+men-sneakers,soleMaterial,shoeEU,-,minOnly,regular,-,-,popular,max
+women-tshirts,neckline,-,true,maxOnly,-,-,one,priceAsc,-
+men-jackets,closure,-,true,maxOnly,minLength,several,several,priceDesc,max
+women-trousers,rise,waist,false,maxOnly,-,-,-,newest,min
+men-sneakers,soleMaterial,-,true,maxOnly,minLength,one,one,popular,regular
+men-jackets,closure,letter,-,range,regular,-,-,priceAsc,-
+women-skirts,rise,letter,false,range,maxLength,one,one,-,min
+women-tshirts,neckline,-,true,equal,minLength,-,-,priceDesc,regular
+men-jackets,closure,-,true,equal,regular,several,several,newest,regular
+men-sneakers,soleMaterial,shoeEU,false,equal,maxLength,several,one,-,-
+-,-,-,-,-,maxLength,several,-,priceDesc,max
+women-trousers,rise,waist,true,minOnly,maxLength,several,one,popular,max
+-,-,-,false,maxOnly,regular,-,several,newest,-
+women-skirts,rise,letter,false,maxOnly,regular,several,-,priceAsc,-
+-,-,-,false,range,minLength,one,-,popular,regular
+-,-,-,-,equal,minLength,several,several,-,min
+women-skirts,-,-,false,equal,maxLength,one,several,priceDesc,max
+women-trousers,-,-,true,minOnly,regular,one,one,priceDesc,max
+men-sneakers,soleMaterial,shoeEU,true,-,-,-,several,newest,-
+men-jackets,closure,letter,-,maxOnly,-,-,-,popular,regular
+women-tshirts,-,letter,false,maxOnly,maxLength,-,one,priceDesc,max
+women-tshirts,neckline,-,true,range,regular,-,one,priceDesc,-
