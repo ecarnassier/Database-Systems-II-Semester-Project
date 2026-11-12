@@ -30,5 +30,5 @@ Each process has a UML activity diagram and a graph-based model
 | Process | TDL = 1 | TDL = 2 | TDL = 3 |
 |---|:---:|:---:|:---:|
 | Account – log in or register, add address | 2 tests | 4 tests | 8 tests |
-| Wishlist | … | … | … |
-| Checkout | … | … | … |
+| Wishlist | 2 tests | 5 tests | 9 tests |
+| Checkout | 2 tests | 4 tests | 8 tests |
