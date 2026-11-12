@@ -1,0 +1,60 @@
+# ACTS Test Suite Generation: Thu Nov 12 00:46:55 CET 2026
+#  '*' represents don't care value 
+# Degree of interaction coverage: -1
+# Number of parameters: 10
+# Maximum number of values per parameter: 6
+# Number of configurations: 53
+Category,TypeFilter,Size,InStock,Price,Q,Brand,Color,Sort,PageSize
+-,-,-,true,minOnly,minLength,one,one,priceAsc,min
+women-tshirts,-,letter,false,maxOnly,regular,several,several,priceDesc,regular
+women-tshirts,neckline,-,-,range,maxLength,-,-,newest,max
+men-jackets,-,letter,-,equal,-,one,-,popular,-
+men-jackets,closure,-,false,-,regular,-,one,-,min
+women-trousers,-,waist,true,range,maxLength,several,several,-,regular
+women-trousers,rise,waist,false,equal,regular,one,-,priceAsc,max
+women-skirts,-,letter,true,-,minLength,several,one,newest,max
+women-skirts,rise,-,-,minOnly,-,-,several,popular,regular
+men-sneakers,-,shoeEU,-,maxOnly,minLength,-,-,-,-
+men-sneakers,soleMaterial,shoeEU,true,range,-,one,one,priceDesc,min
+women-tshirts,neckline,letter,true,-,maxLength,one,several,popular,min
+women-trousers,rise,-,-,-,minLength,several,one,priceDesc,-
+men-sneakers,soleMaterial,-,false,-,maxLength,several,-,priceAsc,regular
+women-tshirts,neckline,letter,false,minOnly,-,several,one,-,max
+men-jackets,closure,letter,true,minOnly,maxLength,-,several,newest,-
+men-sneakers,soleMaterial,shoeEU,false,minOnly,regular,several,several,popular,max
+women-tshirts,neckline,-,true,maxOnly,-,-,-,priceAsc,-
+men-jackets,closure,-,-,maxOnly,minLength,one,-,priceDesc,max
+women-trousers,rise,waist,-,maxOnly,-,-,one,newest,min
+men-sneakers,soleMaterial,-,false,maxOnly,minLength,one,one,popular,regular
+men-jackets,closure,letter,false,range,regular,several,several,priceAsc,-
+women-skirts,rise,letter,false,range,maxLength,one,-,-,min
+women-tshirts,neckline,-,false,equal,minLength,-,several,priceDesc,regular
+men-jackets,closure,-,true,equal,regular,one,one,newest,regular
+men-sneakers,soleMaterial,shoeEU,-,equal,maxLength,several,one,-,-
+-,-,-,-,-,maxLength,-,several,priceDesc,max
+women-trousers,rise,waist,true,minOnly,minLength,several,-,popular,-
+-,-,-,false,maxOnly,regular,several,-,newest,regular
+women-skirts,-,-,-,maxOnly,regular,several,several,priceAsc,-
+-,-,-,false,range,minLength,several,one,popular,-
+-,-,-,false,equal,regular,several,several,-,min
+women-skirts,rise,letter,-,equal,regular,several,several,priceDesc,-
+women-trousers,-,waist,-,minOnly,minLength,several,one,priceDesc,min
+men-sneakers,soleMaterial,shoeEU,-,-,-,-,several,newest,regular
+men-jackets,closure,letter,-,range,-,one,one,popular,max
+men-sneakers,-,shoeEU,true,maxOnly,maxLength,one,one,priceAsc,max
+women-trousers,-,waist,false,-,maxLength,one,-,priceDesc,min
+women-tshirts,-,-,true,range,-,one,-,priceDesc,min
+men-jackets,-,-,true,range,-,several,several,priceDesc,regular
+women-trousers,-,-,false,-,regular,one,one,priceDesc,max
+men-sneakers,-,-,true,range,regular,-,one,priceDesc,regular
+women-tshirts,neckline,letter,-,range,regular,-,one,priceAsc,-
+men-sneakers,soleMaterial,-,-,range,regular,-,-,popular,min
+women-trousers,rise,-,true,-,-,several,several,priceAsc,-
+men-sneakers,soleMaterial,-,true,-,maxLength,one,one,-,max
+women-skirts,rise,letter,true,minOnly,-,-,several,priceAsc,-
+women-skirts,rise,-,false,-,regular,one,several,-,min
+men-sneakers,-,shoeEU,false,maxOnly,minLength,-,several,-,-
+women-skirts,-,-,true,-,maxLength,one,several,priceDesc,regular
+women-tshirts,-,-,-,minOnly,-,several,several,newest,-
+men-jackets,-,letter,false,minOnly,maxLength,several,-,priceAsc,min
+women-skirts,-,letter,false,minOnly,minLength,-,-,newest,min

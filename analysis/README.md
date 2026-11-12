@@ -18,8 +18,8 @@ Model: `combinations/model.txt` (ACTS 3.2, algorithm IPOG).
 | Coverage | Test cases | File |
 |---|:---:|---|
 | 2-way | 38 | `combinations-2way.csv` |
-| Mixed strength | … | `combinations-mixed.csv` |
-| 3-way | … | `combinations-3way.csv` |
+| Mixed strength | 53 | `combinations-mixed.csv` |
+| 3-way | 201 | `combinations-3way.csv` |
 | Exhaustive (for comparison) | 1 296 000 | – |
 
 ## Process testing
