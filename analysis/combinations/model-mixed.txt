@@ -1,0 +1,33 @@
+[System]
+-- specify system name
+Name: Product Search Mixed
+
+[Parameter]
+-- general syntax is parameter_name : value1, value2, ...
+Category (enum) : -, women-tshirts, men-jackets, women-trousers, women-skirts, men-sneakers
+TypeFilter (enum) : -, neckline, closure, rise, soleMaterial
+Size (enum) : -, letter, waist, shoeEU
+InStock (enum) : -, true, false
+Price (enum) : -, minOnly, maxOnly, range, equal
+Q (enum) : -, minLength, regular, maxLength
+Brand (enum) : -, one, several
+Color (enum) : -, one, several
+Sort (enum) : -, priceAsc, priceDesc, newest, popular
+PageSize (enum) : -, min, regular, max
+
+[Relation]
+-- this section is optional
+-- general format Rx : (p1, p2, ..., pk, Strength)
+R1 : (Category, TypeFilter, Size, InStock, Price, Q, Brand, Color, Sort, PageSize, 2)
+R2 : (Category, TypeFilter, Size, InStock, 3)
+
+[Constraint]
+-- this section is also optional
+TypeFilter = "neckline" => Category = "women-tshirts"
+TypeFilter = "closure" => Category = "men-jackets"
+TypeFilter = "rise" => (Category = "women-trousers" || Category = "women-skirts")
+TypeFilter = "soleMaterial" => Category = "men-sneakers"
+Size = "letter" => (Category = "women-tshirts" || Category = "men-jackets" || Category = "women-skirts")
+Size = "waist" => Category = "women-trousers"
+Size = "shoeEU" => Category = "men-sneakers"
+Category = "-" => Q != "-"
